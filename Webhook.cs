@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Flurl.Http;
 
 namespace DiscordWebhook
 {
@@ -82,7 +83,6 @@ namespace DiscordWebhook
                     var contentFile = new StreamContent(new FileStream(item, FileMode.Open));
                     contentMultipartFormData.Add(contentFile, name, name);
                 }
-
                 return await _httpClient.PostAsync(_webhookUrl, contentMultipartFormData);
             }
 

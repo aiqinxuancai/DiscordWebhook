@@ -3,6 +3,8 @@
   <Costura >
     <IncludeAssemblies>
       Newtonsoft.Json
+      Flurl
+      Flurl.Http
     </IncludeAssemblies>
   </Costura >
 </Weavers>
