@@ -1,6 +1,17 @@
 # DiscordWebhook
 Discord webhook library in C#
 
+# Fork Update
+Add  Upload Image
+
+```csharp
+Webhook webhook = new Webhook("https://discordapp.com/api/webhooks/509199234734489601/_IcLswjSwKmM8wC8ag3ggVmHilyRFvopKjc4rRM2QtSjX85Qt-PwaRlqJhYuH2vcD3ku");
+var files = new List<string>();
+files.Add(@"C:\Users\aiqin\Documents\image.jpg");
+var data = webhook.Send("test", "ddd",null, false, null, files);
+Debug.WriteLine(data.Result);
+```
+
 ## Features
 Currently the list of features is very limited due to the requirements that I personally had when creating this library. The goal is to send a webhook request to Discord, there is no validation and no handling of rate limits, which I will add later on. The whole purpose right now is to send quick webhook requests without having to use bloated libraries with bot features which you don't need for pure webhooks.
 
