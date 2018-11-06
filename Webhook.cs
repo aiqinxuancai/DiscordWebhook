@@ -29,9 +29,14 @@ namespace DiscordWebhook
 
         private List<string> Files { get; set; } = new List<string>();
 
-        public Webhook(string webhookUrl, string proxy = null)
+        /// <summary>
+        /// discord webhook
+        /// </summary>
+        /// <param name="webhookUrl"></param>
+        /// <param name="proxy">e.g. "http://localhost:1080"</param>
+        public Webhook(string webhookUrl, string proxy = "")
         {
-            if (proxy == null)
+            if (proxy != string.Empty)
             {
                 var cookies = new CookieContainer();
 
@@ -40,7 +45,7 @@ namespace DiscordWebhook
                     CookieContainer = cookies,
                     UseCookies = true,
                     UseDefaultCredentials = false,
-                    Proxy = new WebProxy("http://localhost:1080", false, new string[] { }),
+                    Proxy = new WebProxy(proxy, false, new string[] { }),
                     UseProxy = true,
                 };
                 _httpClient = new HttpClient(handler);
