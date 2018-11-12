@@ -5,7 +5,7 @@ Discord webhook library in C#
 Add  Upload Image
 
 ```csharp
-Webhook webhook = new Webhook("https://discordapp.com/api/webhooks/509199234734489601/_IcLswjSwKmM8wC8ag3ggVmHilyRFvopKjc4rRM2QtSjX85Qt-PwaRlqJhYuH2vcD3ku");
+Webhook webhook = new Webhook("https://discordapp.com/api/webhooks/*/*");
 var files = new List<string>();
 files.Add(@"C:\Users\aiqin\Documents\image.jpg");
 var data = webhook.Send("test", "ddd",null, false, null, files);
